@@ -10,7 +10,7 @@ public class Ship {
 	
 	public Ship(Player owner) {
 		this.owner = owner;
-		this.startPoint = Point.randomPoint(25-(length-1));
+		this.startPoint = Point.randomPoint(10-(length-1));
 		this.location = new ArrayList<Point>();
 	}
 	

@@ -1,15 +1,19 @@
-import java.util.ArrayList;
+import java.util.Scanner;
 
 @SuppressWarnings("unused")
 public class MainGame {
 	Player p1;
 	Player p2;
-	Point target;
+	Point target = new Point(0,0);
 	
+	@SuppressWarnings("resource")
 	public void startGame() {
 		Shipwright shipMaker = new Shipwright();
 		p1 = new Player();
-		p1.name = "Player One";
+		Scanner input = new Scanner (System.in);
+		System.out.println("Enter your name");
+		p1.name = input.nextLine();
+		System.out.println(p1.name + " has joined the battle");
 		p2 = new Player();
 		p2.name = "Player Two";
 		
@@ -19,8 +23,12 @@ public class MainGame {
 		p2.getShipLocations();
 		
 		while(true) {
-			p1.fire();
-			target = p1.saveguess;
+			//p1.fire();
+			//target = p1.saveguess;
+			System.out.println("Enter x coordinate:");
+			target.x = input.nextInt();
+			System.out.println("Enter y coordinate:");
+			target.y = input.nextInt();
 			System.out.println("Firing at " + target.getPoint() + "!");
 			p2.PatrolBoat.hitCheck(target);
 			p2.Cruiser.hitCheck(target);

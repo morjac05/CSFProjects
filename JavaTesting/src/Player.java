@@ -16,7 +16,7 @@ public class Player {
 	}
 	
 	void fire() {
-		Point aim = Point.randomPoint(25);
+		Point aim = Point.randomPoint(10);
 		if(alreadyChecked.contains(aim.getPoint())) {
 			fire();
 			}
