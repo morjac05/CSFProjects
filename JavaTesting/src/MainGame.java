@@ -5,6 +5,7 @@ public class MainGame {
 	Player p1;
 	Player p2;
 	Point target = new Point(0,0);
+	int roundNumber=1;
 	
 	@SuppressWarnings("resource")
 	public void startGame() {
@@ -15,29 +16,36 @@ public class MainGame {
 		p1.name = input.nextLine();
 		System.out.println(p1.name + " has joined the battle");
 		p2 = new Player();
-		p2.name = "Player Two";
+		System.out.println("Enter your name:");
+		p2.name = input.nextLine();
+		System.out.println(p2.name + " has joined the battle");
 		
 		Shipwright.makeShips(p1);
-		p1.getShipLocations();
+		//p1.getShipLocations();
 		Shipwright.makeShips(p2);
-		p2.getShipLocations();
+		//p2.getShipLocations();
 		
 		while(true) {
 			//p1.fire();
 			//target = p1.saveguess;
+			System.out.println("Round " + roundNumber + " beginning!");
 			System.out.println("Enter x coordinate:");
 			target.x = input.nextInt();
 			System.out.println("Enter y coordinate:");
 			target.y = input.nextInt();
-			System.out.println("Firing at " + target.getPoint() + "!");
+			System.out.println(p1.name + " is firing at " + target.getPoint() + "!");
 			p2.PatrolBoat.hitCheck(target);
 			p2.Cruiser.hitCheck(target);
 			p2.Battleship.hitCheck(target);
 			p2.Carrier.hitCheck(target);
 			
-			p2.fire();
-			target = p2.saveguess;
-			System.out.println("Firing at " + target.getPoint() + "!");
+			//p2.fire();
+			//target = p2.saveguess;
+			System.out.println("Enter x coordinate:");
+			target.x = input.nextInt();
+			System.out.println("Enter y coordinate:");
+			target.y = input.nextInt();
+			System.out.println(p2.name + " is firing at " + target.getPoint() + "!");
 			p1.PatrolBoat.hitCheck(target);
 			p1.Cruiser.hitCheck(target);
 			p1.Battleship.hitCheck(target);
@@ -58,6 +66,7 @@ public class MainGame {
 			}
 			else {
 				System.out.println("Fire next salvo!");
+				roundNumber++;
 			}
 		}
 	}
