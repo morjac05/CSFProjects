@@ -4,5 +4,6 @@ public class Carrier extends Ship {
 		this.name = "Aircraft Carrier";
 		this.length = 5;
 		this.shiphp = length;
+		this.init();
 	}
 }

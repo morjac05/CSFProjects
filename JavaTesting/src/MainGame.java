@@ -21,9 +21,9 @@ public class MainGame {
 		System.out.println(p2.name + " has joined the battle");
 		
 		Shipwright.makeShips(p1);
-		//p1.getShipLocations();
+		p1.getShipLocations();
 		Shipwright.makeShips(p2);
-		//p2.getShipLocations();
+		p2.getShipLocations();
 		
 		while(true) {
 			//p1.fire();

@@ -4,5 +4,6 @@ public class Cruiser extends Ship {
 		this.name = "Cruiser";
 		this.length = 3;
 		this.shiphp = length;
+		init();
 	}
 }

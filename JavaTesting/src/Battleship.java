@@ -4,5 +4,6 @@ public class Battleship extends Ship {
 		this.name = "Battleship";
 		this.length = 4;
 		this.shiphp = length;
+		this.init();
 	}
 }

@@ -14,14 +14,14 @@ public class Shipwright {
 		PatrolBoat pboat = new PatrolBoat(player);
 		pboat.generateShip();
 		player.PatrolBoat = pboat;
-		Cruiser cruiser = new Cruiser(player);
-		cruiser.generateShip();
-		player.Cruiser = cruiser;
+		Cruiser cru = new Cruiser(player);
+		cru.generateShip();
+		player.Cruiser = cru;
 		Battleship bship = new Battleship(player);
 		bship.generateShip();
 		player.Battleship = bship;
-		Carrier carrier = new Carrier(player);
-		carrier.generateShip();
-		player.Carrier = carrier;
+		Carrier car = new Carrier(player);
+		car.generateShip();
+		player.Carrier = car;
 	}
 }
