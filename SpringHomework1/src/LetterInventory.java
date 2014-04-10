@@ -1,13 +1,12 @@
 public class LetterInventory {
 	char[] characterArray;
-	String matches = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	String matches = "abcdefghijklmnopqrstuvwxyz";
 	int[] count = new int[matches.length()];
 	static int sum=0;
 	boolean empty=false;
 	
 	public LetterInventory(String data) {
 		for(int i=0; i<data.length(); i++) {
-			data = data.toUpperCase();
 			int index = matches.indexOf(data.charAt(i));
 			if(index<0) {
 				continue;
@@ -69,7 +68,6 @@ public class LetterInventory {
 	
 	public String toString() {
 		String inventory = "";
-		matches = matches.toLowerCase();
 		for(int i=0;i<matches.length();i++) {
 			char ch = matches.charAt(i);
 			for(int j=0;j<count[i];j++) {
